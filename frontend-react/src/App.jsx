@@ -1,36 +1,25 @@
-import { useState } from 'react'
 import './assets/css/style.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Main from './components/Main'
 import Login from './components/Login'
-import {BrowserRouter, Routes, Route} from  "react-router-dom"
 import Register from './components/Register'
-
-
+import AuthProvider from './components/AuthProvider'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 function App() {
-  
-
   return (
-    <>
-     
-    <BrowserRouter>
+    <AuthProvider>
+  <BrowserRouter>
     <Header />
-    
-     <Routes>
+    <Routes>
       <Route path='/' element={<Main />} />
-      <Route path='/register' element={<Register />} />
       <Route path='/login' element={<Login />} />
-    
-    
-     </Routes>
-     <Footer />
-    </BrowserRouter>
-
-     
-     
-    </>
+      <Route path='/register' element={<Register />} />
+    </Routes>
+    <Footer />
+  </BrowserRouter>
+</AuthProvider>
   )
 }
 
