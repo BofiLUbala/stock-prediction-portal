@@ -14,7 +14,7 @@ const Main = () => {
                     <p className='text-light lead'>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit...
                     </p>
-                    <Button text="Login" className='btn btn-outline-info' />
+                    <Button text="DashBord" className='btn btn-outline-info' url='/dashboard' />
                 </div>
             </div>
 

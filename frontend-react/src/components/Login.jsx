@@ -29,7 +29,7 @@ const Login = () => {
       localStorage.setItem("refreshToken", response.data.refresh)
 
       setIsLoggedIn(true)
-      navigate('/')
+      navigate('/dashboard')
 
     } catch (err) {
       setError("Invalid username or password")

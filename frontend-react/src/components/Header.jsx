@@ -4,9 +4,8 @@ import Button from '../Button'
 import { AuthContext } from './AuthProvider'
 
 const Header = () => {
-
   const auth = useContext(AuthContext)
-const navigate=useNavigate()
+  const navigate = useNavigate()
   // ✅ SAFETY CHECK
   if (!auth) return null
 
@@ -14,7 +13,7 @@ const navigate=useNavigate()
 
   const handleLogout = () => {
     localStorage.removeItem('accessToken')
-     localStorage.removeItem('refreshToken')
+    localStorage.removeItem('refreshToken')
     setIsLoggedIn(false)
     navigate('/login')
   }
@@ -27,9 +26,12 @@ const navigate=useNavigate()
 
       <div>
         {isLoggedIn ? (
-          <button className='btn btn-danger' onClick={handleLogout}>
-            Logout
-          </button>
+          <>
+            <Button text='Dashboard' className='btn-outline-info' url='/dashboard' />
+            <button className='btn btn-danger' onClick={handleLogout}>
+              Logout
+            </button>
+          </>
         ) : (
           <>
             <Button text='Login' className='btn-outline-info' url='/login' />
